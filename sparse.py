@@ -67,7 +67,6 @@ def densify(matrix):
 
 
 
-
 def tranpose(matrix):
 
     rows_columns_indexes = []
