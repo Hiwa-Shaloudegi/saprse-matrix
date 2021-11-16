@@ -1,33 +1,18 @@
-import sparse 
-spr = sparse.Function()
+import sys
+import sparse as spr
 
 
 while (True):
-    print("\t\t\t\t\tWelcome, I do some operations on sparse matrices :)")
+
+    ################ Menue
+    address1 = input("Enter the first file address: ")
+    address2 = input("Enter the second file address: ")
+
+    matrix1, matrix2 = spr.make_to_matrix(address1, address2)
+
     print()
-
-    
-    ################
-
-    # Read file
-    address1 = input("Enter the first file address (the first matrix): ")
-    address2 = input("Enter the second file address (the second matrix): ")
-    #f1 = open(address1, 'r')
-    #f2 = open(address1, 'r')
-
-    f = open('example.txt', 'r')
-    content = f.read()
-    f.close()
-
-
-    # Convert to 2D matrix
-
-    arr = content.split(" / ")
-    
-    arr_2d = [i.split(" ") for i in arr]
-
-    ################
-
+    print("Choose an item:")
+    print()
     print("1- add")
     print("2- minus")
     print("3- multiply")
@@ -41,7 +26,6 @@ while (True):
 
     if selected_number == 1:
         pass
-
 
 
 
@@ -62,17 +46,18 @@ while (True):
 
 
 
-    elif selected_number == 6:
+    elif selected_number == 5:
         pass
 
 
 
     elif selected_number == 6:
-        quit()
+        sys.exit("END OF THE PROGRAM")
 
 
 
-    else:pass #try catch
+    else:
+        pass 
 
 
 
