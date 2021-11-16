@@ -148,9 +148,47 @@ def add(matrix1, matrix2):
 
     
 def minus(matrix1, matrix2):
+
+    matrix_result  = []
+
     sparse1 = densify(matrix1)
     sparse2 = densify(matrix2)
-    pass
+
+    
+    for sparse1_row in sparse1:
+        for sparse2_row in sparse2:
+
+            if sparse1_row[:2] == sparse2_row[:2]:
+
+                suum = sparse1_row[2] - sparse2_row[2]
+
+                result_row = sparse1_row[:2]
+                result_row.append(suum)
+
+                matrix_result.append(result_row)
+
+
+                index1 = sparse1.index(sparse1_row)
+                sparse1[index1].clear()
+
+                index2 = sparse2.index(sparse2_row)
+                sparse2[index2].clear()
+
+                break
+
+            
+    for row1 in sparse1:
+        if row1 != []:
+            matrix_result.append(row1)
+
+    for row2 in sparse2:
+        if row2 != []:
+            matrix_result.append(row2)
+
+    
+    matrix_result.sort()
+
+    return matrix_result
 
 
 
