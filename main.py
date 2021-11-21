@@ -4,7 +4,7 @@ import sparse as spr
 
 while (True):
 
-    ################ Menue
+    ################ Menu
     address1 = input("Enter the first file address: ")
     address2 = input("Enter the second file address: ")
 
