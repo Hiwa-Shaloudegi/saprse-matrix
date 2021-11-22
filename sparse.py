@@ -3,9 +3,6 @@ def make_to_matrix(address_file1, address_file2):
     # Open and Read files
 
     f1 = open(address_file1, 'r')
-    f2 = open(address_file2, 'r')
-
-    f1 = open(address_file1, 'r')
     content1 = f1.read()
     f1.close()
 
@@ -101,7 +98,6 @@ def tranpose(matrix):
 def add(matrix1, matrix2):
 
     matrix_result  = []
-
     sparse1 = densify(matrix1)
     sparse2 = densify(matrix2)
 
@@ -149,7 +145,6 @@ def add(matrix1, matrix2):
 def minus(matrix1, matrix2):
 
     matrix_result  = []
-
     sparse1 = densify(matrix1)
     sparse2 = densify(matrix2)
 
@@ -193,9 +188,39 @@ def minus(matrix1, matrix2):
 
     
 def multiply(matrix1, matrix2):
+
+    matrix_result  = []
     sparse1 = densify(matrix1)
-    sparse2 = densify(matrix2)
-    pass
+    sparse2 = tranpose(matrix2)
+
+    for sparse1_row in sparse1:
+        for sparse2_row in sparse2:
+
+            if sparse1_row[1] == sparse2_row[1]:
+
+                arr = []
+                zarb = sparse1_row[2] * sparse2_row[2]
+
+                arr.append(sparse1_row[0])
+                arr.append(sparse2_row[0])
+                arr.append(zarb)
+                
+                state = False # if line 214 ejra shavad nabayad dastoor line 218 ejra shavad
+                if len(matrix_result) == 0:
+                    matrix_result.append(arr)
+                else:
+                    for result_row in matrix_result:
+                        if arr[:2] == result_row[:2]:
+                            result_row[2] = result_row[2] + zarb
+                            state = True
+                            break
+                    if not state:
+                        matrix_result.append(arr)
+
+
+    matrix_result.sort() 
+    
+    return matrix_result
 
 
 
