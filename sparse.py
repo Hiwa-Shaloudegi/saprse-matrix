@@ -37,7 +37,7 @@ def densify(matrix):
     
     for i in range(len(matrix)):
         for j in range(len(matrix[i])):
-
+            
             if int(matrix[i][j]) != 0:
                 rows.append(i)
                 columns.append(j)
@@ -219,7 +219,7 @@ def multiply(matrix1, matrix2):
 
 
     matrix_result.sort() 
-    
+
     return matrix_result
 
 
@@ -235,6 +235,11 @@ def divide(matrix1, matrix2):
 
 
 
+def pretty(matrix):
+    for row in matrix:
+        for cell in row:
+            print(cell, end='\t')
+        print(end='\n')
 
 
 

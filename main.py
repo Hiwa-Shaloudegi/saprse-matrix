@@ -25,29 +25,45 @@ while (True):
 
 
     if selected_number == 1:
-        pass
+        result = spr.add(matrix1, matrix2)
+        spr.pretty(result)
 
 
 
     elif selected_number == 2:
-        pass
+        result = spr.minus(matrix1, matrix2)
+        spr.pretty(result)
 
 
 
     elif selected_number == 3:
-        pass
+        result = spr.multiply(matrix1, matrix2)
+        spr.pretty(result)
 
 
 
 
     elif selected_number == 4:
-        pass
+        result = spr.divide(matrix1, matrix2)
+        spr.pretty(result)
 
 
 
 
     elif selected_number == 5:
-        pass
+
+        n = int(input("Wich matrix? [1/2]: "))
+
+        if n == 1:
+            result = spr.tranpose(matrix1)
+
+        elif n == 2:
+            result = spr.tranpose(matrix2)
+
+        else:
+            sys.exit('Invalid Number!')
+
+        spr.pretty(result)
 
 
 
@@ -57,16 +73,6 @@ while (True):
 
 
     else:
-        pass 
-
-
-
-
-
-# Call sparses methods
-
-
-
-# Show output results
+        sys.exit('Invalid Number!') 
 
 
